@@ -22,7 +22,7 @@ set(SOURCES
         ${CMAKE_CURRENT_LIST_DIR}/main.cpp
         ${CMAKE_CURRENT_LIST_DIR}/connection.cpp
         ${CMAKE_CURRENT_LIST_DIR}/connection.h
-        )
+        object.cpp object.h objectsecurity.cpp objectsecurity.h objectserver.cpp objectserver.h objectdevice.cpp objectdevice.h)
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${WAKAAMA_SOURCES} ${SHARED_SOURCES})
 
