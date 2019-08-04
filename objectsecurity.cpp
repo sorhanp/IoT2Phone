@@ -23,7 +23,7 @@ void ObjectSecurity::free_security_object(lwm2m_object_t *objectP) {
     lwm2m_free(objectP);
 }
 
-char *ObjectSecurity::get_server_uri(lwm2m_object_t *objectP, uint16_t secObjInstID) {
+char* ObjectSecurity::get_server_uri(lwm2m_object_t *objectP, uint16_t secObjInstID) {
     auto * targetP = (security_instance_t *)LWM2M_LIST_FIND(objectP->instanceList, secObjInstID);
 
     if (nullptr != targetP)
@@ -114,7 +114,7 @@ uint8_t ObjectSecurity::prv_get_value(lwm2m_data_t *dataP, security_instance_t *
 }
 
 lwm2m_object_t* ObjectSecurity::get_security_object(){
-    lwm2m_object_t * securityObj;
+    lwm2m_object_t* securityObj;
 
     securityObj = (lwm2m_object_t *)lwm2m_malloc(sizeof(lwm2m_object_t));
 

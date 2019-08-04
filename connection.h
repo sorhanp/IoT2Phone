@@ -12,7 +12,7 @@
 
 typedef struct _connection_t
 {
-    struct _connection_t *  next;
+    struct _connection_t*   next;
     int                     sock;
     struct sockaddr_in6     addr;
     size_t                  addrLen;
@@ -35,6 +35,7 @@ private:
     boost::asio::ip::udp::socket    m_socket;
     boost::asio::ip::udp::endpoint  m_receiverEndpoint;
     client_data_t                   m_data;
+    connection_t                    m_conn;
 
 public:
     Connection(boost::asio::io_context &ioContext,
@@ -47,8 +48,13 @@ public:
 
     void send(const std::string_view &message);
 
+    const client_data_t &getMData() const;
     //TODO: Better implementation of m_data
     void setDataSecObject(lwm2m_object_t *securityObjP);
+
+    const int &getSocket() const;
+    connection_t *getConnList();
+
 };
 
 #endif //PHONE2IOT_CONNECTION_H

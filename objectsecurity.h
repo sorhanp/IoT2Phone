@@ -56,12 +56,12 @@ public:
     ObjectSecurity();
 
     //See if this can be done with destructor
-    static void free_security_object(lwm2m_object_t * objectP);
-    char * get_server_uri(lwm2m_object_t * objectP,
+    void free_security_object(lwm2m_object_t * objectP);
+    static char* get_server_uri(lwm2m_object_t * objectP,
                           uint16_t secObjInstID);
     static uint8_t prv_get_value(lwm2m_data_t * dataP,
                                  security_instance_t * targetP);
-    static lwm2m_object_t* get_security_object();
+    lwm2m_object_t* get_security_object();
     static uint8_t prv_security_read(uint16_t instanceId,
                               int * numDataP,
                               lwm2m_data_t ** dataArrayP,

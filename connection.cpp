@@ -56,3 +56,16 @@ void Connection::send(const std::string_view &message) {
 void Connection::setDataSecObject(lwm2m_object_t *securityObject) {
     m_data.securityObjP = securityObject;
 }
+
+const client_data_t &Connection::getMData() const {
+    return m_data;
+}
+
+const int &Connection::getSocket() const {
+    return m_data.socket;
+}
+
+connection_t *Connection::getConnList() {
+    return m_data.connList;
+}
+

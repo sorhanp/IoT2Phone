@@ -65,7 +65,7 @@ public:
     ObjectServer();
 
     //Methods:
-    static void free_server_object(lwm2m_object_t* object);
+    void free_server_object(lwm2m_object_t* object);
     lwm2m_object_t * get_server_object();
     static uint8_t prv_server_read(uint16_t instanceId,
                                    int * numDataP,

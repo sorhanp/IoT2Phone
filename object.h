@@ -8,13 +8,21 @@
 #include <vector>
 #include "liblwm2m.h"
 
-class objectSecurity;
+#include "objectsecurity.h"
+#include "objectserver.h"
+#include "objectdevice.h"
 
 class Object {
 private:
-    std::vector<lwm2m_object_t> lwm2mObjects;
-public:
+    std::vector<lwm2m_object_t*> m_lwm2mObjects;
 
+    ObjectSecurity m_objectSecurity;
+    ObjectServer m_objectServer;
+    ObjectDevice m_objectDevice;
+public:
+    Object();
+
+    const std::vector<lwm2m_object_t *> &getMLwm2MObjects() const;
 };
 
 
